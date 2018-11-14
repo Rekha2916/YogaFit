@@ -40,6 +40,7 @@ public class Login extends HttpServlet {
 		String password=request.getParameter("password");
 		Jdbc jd=new Jdbc();
 		String arr[]=jd.login();
+		System.out.println(arr[0]);
 		if((arr[0].equals(user_name)) && (arr[1].equals(password)))
 		{
 			HttpSession session=request.getSession();

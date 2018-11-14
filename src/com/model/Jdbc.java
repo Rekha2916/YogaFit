@@ -12,7 +12,7 @@ public class Jdbc {
 	public Connection myConnection() {
 		try {
 			Class.forName("oracle.jdbc.OracleDriver");
-			conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","System","root");
+			conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","System","NewUser123");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();	
@@ -26,7 +26,7 @@ public class Jdbc {
 	public int saveData(List<Signup> lst) {
 		try {
 			conn = myConnection();
-			ps=conn.prepareStatement("insert into Register values(?,?,?)" );	
+			ps=conn.prepareStatement("insert into Yoga_Register values(?,?,?)" );	
 			Signup s=lst.get(0);
 			ps.setString(1,s.getName());
 			ps.setString(2,s.getEmail());
@@ -49,7 +49,7 @@ public class Jdbc {
 		try {
 			conn=myConnection();
 			st=conn.createStatement();
-			rs=st.executeQuery("select name, password from Register");
+			rs=st.executeQuery("select name, password from yoga_Register");
 			while(rs.next())
 			{
 				uname=rs.getString(1);

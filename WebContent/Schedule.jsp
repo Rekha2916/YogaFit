@@ -112,7 +112,7 @@
 					<div class="text-center">
 						<h4 class="mb-10">Repeater Course</h4>
 						<p>
-							<a href="index.jsp">Apply</a>
+							<a href="ApplyCourse.jsp">Apply</a>
 						</p>
 					</div>
 				</div>
@@ -124,7 +124,7 @@
 					<div class="text-center">
 						<h4 class="mb-10">Hath Yoga Pranit Pramanpatra</h4>
 						<p>
-							<a href="index.jsp">Apply</a>
+							<a href="ApplyCourse.jsp">Apply</a>
 						</p>
 					</div>
 				</div>
@@ -136,7 +136,7 @@
 					<div class="text-center">
 						<h4 class="mb-10">Advance Guidance Course</h4>
 						<p>
-							<a href="index.jsp">Apply</a>
+							<a href="ApplyCourse.jsp">Apply</a>
 						</p>
 					</div>
 				</div>

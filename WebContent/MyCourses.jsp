@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="java.sql.*"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>  
+<%@ page errorPage="error.jsp" %>   
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -36,6 +39,16 @@
 </head>
 
 <body>
+<sql:setDataSource
+        var="myDS"
+        driver="oracle.jdbc.OracleDriver"
+        url="jdbc:oracle:thin:@localhost:1521:XE"
+        user="System" password="Newuser123"
+    />
+     <%String str=(String)session.getAttribute("uname"); %>
+    <sql:query var="listUsers"   dataSource="${myDS}">
+       select course_name,duration,hrs_per_week,hrs_per_day from Courses where user_name='<%=(String)session.getAttribute("uname") %>'
+    </sql:query>
 	<!-- start header Area -->
 	<header id="header">
 		<div class="header-top">
@@ -54,7 +67,7 @@
 				</div>
 				<nav id="nav-menu-container">
 					<ul class="nav-menu">
-						<li><a  href="index.jsp"><%=session.getAttribute("uname") %></a></li>
+						<li><a  href="#"><%=session.getAttribute("uname") %></a></li>
 						<li><a href="Schedule.jsp">Schedule</a></li>
 						<li><a class="active" href="MyCourses.jsp">MyCourses</a></li>
 						
@@ -109,28 +122,16 @@
 							</tr>
 						</thead>
 						<tbody>
+						 <c:forEach var="user" items="${listUsers.rows}">
 							<tr>
-							<%
-							String str=(String)session.getAttribute("uname");
-							Class.forName("oracle.jdbc.OracleDriver");
-							Connection conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","System","root");
-							Statement s=conn.createStatement();
-							ResultSet rs=s.executeQuery("select course_name,duration,hrs_per_week,hrs_per_day from Courses where user_name='"+str+"'");
-							while(rs.next())
-							{
-							%>
-								<th class="name" scope="row"><%=rs.getString(1) %></th>
-								<td><%=rs.getInt(2) %></td>
-								<td><%=rs.getInt(3)%></td>
-								<td><%=rs.getInt(4)%></td>
-								
+							
+								<td><c:out value="${user.course_name}" /></td>
+                    <td><c:out value="${user.duration}" /></td>
+                    <td><c:out value="${user.hrs_per_week}" /></td>
+                    <td><c:out value="${user.hrs_per_day}" /></td>
 								
 							</tr>
-							<%
-							}
-							%>
-							
-							
+							</c:forEach>
 						</tbody>
 					</table>
 				</div>
