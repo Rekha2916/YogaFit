@@ -40,7 +40,7 @@ public class ForgotPassword extends HttpServlet {
 		String email=request.getParameter("email");
 		String pass=request.getParameter("password");
 		Jdbc jd=new Jdbc();
-		int i=jd.updatePass(pass, email);
+		int i=jd.updatePass(pass, email);// updated password of specified email
 		if(i>0)
 		{
 			System.out.println(i+ " updated...");

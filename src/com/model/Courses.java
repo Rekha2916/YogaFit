@@ -7,6 +7,7 @@ public class Courses {
 	private int hrs_per_week;
 	private int hrs_per_day;
 	
+	//setter and getter
 	public String getUser_name() {
 		return user_name;
 	}

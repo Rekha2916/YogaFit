@@ -11,6 +11,7 @@ public class Jdbc {
 	ResultSet rs;
 	public Connection myConnection() {
 		try {
+			//connect to database
 			Class.forName("oracle.jdbc.OracleDriver");
 			conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","System","NewUser123");
 		} catch (ClassNotFoundException e) {
@@ -23,6 +24,7 @@ public class Jdbc {
 		return conn;
 	}
 	
+	//insert record into Register database
 	public int saveData(List<Signup> lst) {
 		try {
 			conn = myConnection();
@@ -41,6 +43,7 @@ public class Jdbc {
 		}
 		return i;
 	}
+	//return user details
 	public String[] login()
 	{
 		String uname = null;
@@ -63,6 +66,7 @@ public class Jdbc {
 		return new String[] {uname,password};
 	}
 	
+	// insert record into courses
 	public int insertCourse(List<Courses> lst)
 	{
 		try
@@ -87,6 +91,7 @@ public class Jdbc {
 	return i;
 	}
 	
+	//update password of user
 	public int updatePass(String pass, String email)
 	{
 		try

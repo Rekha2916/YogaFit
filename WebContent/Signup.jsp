@@ -15,6 +15,7 @@
     <!-- Main css -->
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript">
+    //password and confirm password matching 
     function Validate() {
         var password = document.getElementById("password").value;
         var confirmPassword = document.getElementById("re_password").value;

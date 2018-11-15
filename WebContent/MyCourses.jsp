@@ -45,6 +45,8 @@
         url="jdbc:oracle:thin:@localhost:1521:XE"
         user="System" password="Newuser123"
     />
+    <!-- connection to database -->
+    
      <%String str=(String)session.getAttribute("uname"); %>
     <sql:query var="listUsers"   dataSource="${myDS}">
        select course_name,duration,hrs_per_week,hrs_per_day from Courses where user_name='<%=(String)session.getAttribute("uname") %>'
@@ -138,19 +140,7 @@
 			</div>
 		</div>
 	</section>
-	<!-- End schedule Area -->
-
-	<!-- Start testomial Area -->
 	
-	<!-- End testomial Area -->
-
-	<!-- Start cta-one Area -->
-	
-	<!-- End cta-one Area -->
-
-	<!-- Start blog Area -->
-	
-	<!-- End blog Area -->
 
 	<!-- start footer Area -->
 	

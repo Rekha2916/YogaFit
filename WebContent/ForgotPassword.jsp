@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/style.css">
     
     <script type="text/javascript">
+    //validate user credentials
     function Validate() {
         var password = document.getElementById("password").value;
         var confirmPassword = document.getElementById("re_password").value;

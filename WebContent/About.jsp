@@ -191,10 +191,7 @@ window.onclick = function(event) {
 	</section>
 	<!-- End About Us Area -->
 
-	<!-- Start testomial Area -->
-
-	<!-- End testomial Area -->
-
+	
 	<!-- start footer Area -->
 	
 		

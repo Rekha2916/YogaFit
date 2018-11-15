@@ -88,11 +88,6 @@ if(session!=null)
 	</header>
 	<!-- end header Area -->
 
-	<!-- start banner Area -->
-	
-	<!-- End banner Area -->
-
-	<!-- Start About Us Area -->
 	
 	<!-- End About Us Area -->
 
@@ -160,21 +155,7 @@ if(session!=null)
 	</section>
 	<!-- End Features Area -->
 
-	<!-- Start schedule Area -->
 	
-	<!-- End schedule Area -->
-
-	<!-- Start testomial Area -->
-	
-	<!-- End testomial Area -->
-
-	<!-- Start cta-one Area -->
-	
-	<!-- End cta-one Area -->
-
-	<!-- Start blog Area -->
-	
-	<!-- End blog Area -->
 
 	<!-- start footer Area -->
 	
@@ -190,7 +171,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	</footer>
 	<!-- End footer Area -->
 
-
+  <!-- JS -->
 	<script src="js/vendor/jquery-2.2.4.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
 	 crossorigin="anonymous"></script>

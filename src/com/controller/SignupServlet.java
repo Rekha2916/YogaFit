@@ -49,14 +49,14 @@ public class SignupServlet extends HttpServlet {
 	s.setEmail(email);
 	s.setPassword(password);
 	
-	List<Signup> lst=new ArrayList<Signup>();
+	List<Signup> lst=new ArrayList<Signup>(); //List created of type Signup
 	lst.add(s);
 	Jdbc jd=new Jdbc();
-	int i=jd.saveData(lst);
+	int i=jd.saveData(lst); //insert row into Register table
 	if(i>0)
 	{
 		System.out.println(i+ "inserted");
-		response.sendRedirect("index.jsp");
+		response.sendRedirect("index.jsp"); //redirect to index.jsp
 	}
 	}
 

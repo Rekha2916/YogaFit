@@ -39,19 +39,19 @@ public class Login extends HttpServlet {
 		String user_name=request.getParameter("user_name");
 		String password=request.getParameter("password");
 		Jdbc jd=new Jdbc();
-		String arr[]=jd.login();
+		String arr[]=jd.login(); //get user and paswword from DB
 		System.out.println(arr[0]);
-		if((arr[0].equals(user_name)) && (arr[1].equals(password)))
+		if((arr[0].equals(user_name)) && (arr[1].equals(password))) //check authenticate user
 		{
 			HttpSession session=request.getSession();
-			session.setAttribute("uname", user_name);
+			session.setAttribute("uname", user_name); //session created
 			response.sendRedirect("Welcome.jsp");
 		}
 		else
 		{
 			
-			request.setAttribute("errorMessage", "Invalid user or password");
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
+			//redirect to index jsp
+			request.getRequestDispatcher("/index.jsp").forward(request, response); 
 		}
 		
 	}

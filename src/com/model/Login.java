@@ -3,6 +3,8 @@ package com.model;
 public class Login {
 	private String user_name;
 	private String password;
+	
+	//setter and getter
 	public String getUser_name() {
 		return user_name;
 	}

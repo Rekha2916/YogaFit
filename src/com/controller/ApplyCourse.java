@@ -42,28 +42,28 @@ public class ApplyCourse extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		String course_name=request.getParameter("courses");
+		String course_name=request.getParameter("courses"); 
 		int duration=Integer.parseInt(request.getParameter("duration"));
 		int hrs_per_week=Integer.parseInt(request.getParameter("hrs_per_week"));
 		
 		int hrs_per_day=Integer.parseInt(request.getParameter("hrs_per_day"));
 		
-		HttpSession session=request.getSession();
+		HttpSession session=request.getSession(); //session created
 		
 		Courses c=new Courses();
-		c.setUser_name((String)session.getAttribute("user_name"));
+		c.setUser_name((String)session.getAttribute("user_name")); //setting session
 		c.setCourse_name(course_name);
 		c.setDuration(duration);
 		c.setHrs_per_week(hrs_per_week);
 		c.setHrs_per_day(hrs_per_day);
-		List<Courses> lst=new ArrayList<Courses>();
+		List<Courses> lst=new ArrayList<Courses>(); //created list of type Courses
 		lst.add(c);
 		Jdbc jd=new Jdbc();
-		int i=jd.insertCourse(lst);
+		int i=jd.insertCourse(lst); //insert into database Courses
 		if(i>0)
 		{
 			System.out.println(i+ "inserted");
-			response.sendRedirect("Welcome.jsp");
+			response.sendRedirect("Welcome.jsp"); //redirect to welcome.jsp
 		}
 		
 		
